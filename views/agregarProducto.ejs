@@ -1,0 +1,41 @@
+<!-- views/agregarProducto.ejs -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Agregar Nuevo Producto</h1>
+  </header>
+
+  <section id="formulario">
+    <form action="/guardar-producto" method="post">
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion" name="descripcion" required>
+
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria" required>
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required>
+
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" name="marca" required>
+
+      <label for="punitario">Precio Unitario:</label>
+      <input type="number" id="punitario" name="punitario" required>
+
+      <button type="submit">Guardar Producto</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Tienda Online. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

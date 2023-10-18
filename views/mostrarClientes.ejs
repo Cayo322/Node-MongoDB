@@ -1,0 +1,64 @@
+<!-- mostrarClientes.ejs -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Clientes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Lista de Clientes</h1>
+  </header>
+
+  <section>
+    <ul>
+      <% clientes.forEach(cliente => { %>
+        <li class="cliente-item">
+          <div class="cliente-atributo">
+            <span class="atributo-titulo">Nombre:</span>
+            <span><%= cliente.nombre %></span>
+          </div>
+          <div class="cliente-atributo">
+            <span class="atributo-titulo">Correo:</span>
+            <span><%= cliente.correo %></span>
+          </div>
+          <div class="cliente-atributo">
+            <span class="atributo-titulo">DNI:</span>
+            <span><%= cliente.dni %></span>
+          </div>
+          <div class="cliente-botones">
+            <button onclick="eliminarCliente('<%= cliente._id %>')">Eliminar</button>
+            <button onclick="editarCliente('<%= cliente._id %>')">Editar</button>
+            <button onclick="enviarMensaje('<%= cliente._id %>')">Enviar Mensaje</button>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  </section>
+
+
+
+  <script>
+    function eliminarCliente(clienteId) {
+      // Lógica para eliminar cliente
+      alert('Eliminar cliente con ID: ' + clienteId);
+    }
+
+    function editarCliente(clienteId) {
+      // Lógica para editar cliente
+      alert('Editar cliente con ID: ' + clienteId);
+    }
+
+    function enviarMensaje(clienteId) {
+      // Lógica para enviar mensaje al cliente
+      alert('Enviar mensaje a cliente con ID: ' + clienteId);
+    }
+  </script>
+</body>
+
+</html>

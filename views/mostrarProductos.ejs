@@ -1,0 +1,72 @@
+<!-- mostrarProductos.ejs -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Productos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Lista de Productos</h1>
+  </header>
+
+  <section>
+    <!-- Formulario de búsqueda -->
+    <form action="/buscar-productos" method="get">
+     
+      <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese descripción del producto">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <ul>
+      <% productos.forEach(producto => { %>
+        <li class="producto-item">
+          <div class="producto-atributo">
+            <span class="atributo-titulo">Descripción:</span>
+            <span><%= producto.descripcion %></span>
+          </div>
+          <div class="producto-atributo">
+            <span class="atributo-titulo">Categoría:</span>
+            <span><%= producto.categoria %></span>
+          </div>
+          <div class="producto-atributo">
+            <span class="atributo-titulo">Stock:</span>
+            <span><%= producto.stock %></span>
+          </div>
+          <div class="producto-atributo">
+            <span class="atributo-titulo">Marca:</span>
+            <span><%= producto.marca %></span>
+          </div>
+          <div class="producto-atributo">
+            <span class="atributo-titulo">Precio Unitario:</span>
+            <span><%= producto.punitario %></span>
+          </div>
+          <div class="producto-botones">
+            <button onclick="eliminarProducto('<%= producto._id %>')">Eliminar</button>
+            <button onclick="editarProducto('<%= producto._id %>')">Editar</button>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  </section>
+
+
+  <script>
+    function eliminarProducto(productoId) {
+      // Lógica para eliminar producto
+      alert('Eliminar producto con ID: ' + productoId);
+    }
+
+    function editarProducto(productoId) {
+      // Lógica para editar producto
+      alert('Editar producto con ID: ' + productoId);
+    }
+  </script>
+</body>
+
+</html>
